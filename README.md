@@ -34,8 +34,7 @@ Este projeto usa o Cypress para a automação de testes, portanto, será necess�
 Primeiro, clone o repositório do projeto para o seu ambiente local:
 
 ```bash
-git clone <url-do-repositorio>
-cd <diretorio-do-repositorio>
+git clone <[url-do-repositorio](https://github.com/italo-carvalho-costa/TesteKeeggo.git)>
 
 ### Instalação do Node.js
 
@@ -52,5 +51,4 @@ Este projeto usa o Cypress para a automação de testes, portanto, será necess�
 Primeiro, clone o repositório do projeto para o seu ambiente local:
 
 ```bash
-git clone <url-do-repositorio>
-cd <diretorio-do-repositorio>
+git clone <[url-do-repositorio](https://github.com/italo-carvalho-costa/TesteKeeggo.git)>
