@@ -18,7 +18,7 @@ When("Realizo a busca do produto TABLET no site", () =>{
 })
 Then("O site retorna em tela todos os modelos disponíveis", () =>{
     searchpage.verifySearchResults()
-    searchpage.takeScreenshot()
+    cy.screenshot()
 
 })
 
@@ -36,6 +36,6 @@ And("clico no botão CHECKOUT", () =>{
 
 })
 Then("o site redireciona para a página de pagamento", () =>{
-    checkoutPage.screenshot()
+   cy.screenshot()
   
 })
