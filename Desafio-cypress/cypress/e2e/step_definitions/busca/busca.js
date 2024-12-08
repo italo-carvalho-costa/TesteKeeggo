@@ -1,29 +1,41 @@
 import {Given, When, And, Then} from 'cypress-cucumber-preprocessor/steps'
 
+import homePage from '../../../support/page/homePage.js';
+import searchpage from '../../../support/searchpage/searchpage.js';
+import productpage from '../../../support/productpage/productpage.js';
+import checkoutPage from '../../../support/chackoutpage/checkoutPage.js';
+
+
+
 Given("Que eu estou no site", () =>{
-    cy.visit("https://advantageonlineshopping.com/#/")
+    homePage.visit()
 })
 When("Realizo a busca do produto TABLET no site", () =>{
-    cy.get(':nth-child(4) > .img').click()
-    cy.get('#autoComplete').type('tablet{enter}')
-    cy.get('.autoCompleteCover > div > img').click()
+    homePage.clickOnCategory()
+    homePage.searchForProduct('Tablet')
+    homePage.selectProductFromSearch()
 
 })
 Then("O site retorna em tela todos os modelos disponíveis", () =>{
-    cy.get('#searchResultLabel').should('contain', 'Search result')
-    cy.get('#searchPage').screenshot()
+    searchpage.verifySearchResults()
+    searchpage.takeScreenshot()
+
 })
 
 Given("Que eu estou no site na página do produto HP ELITEPAD 1000 G2 TABLET", () =>{
-    cy.visit("https://advantageonlineshopping.com/#/product/16?viewAll=tablet")
+    homePage.visitTablet()
+
 })
 When("clico no botão ADD TO CART", () =>{
-    cy.get('.fixedBtn > .roboto-medium').click()
+    productpage.addToCart()
+
 })
 
 And("clico no botão CHECKOUT", () =>{
-    cy.get('#checkOutPopUp').click()
+    checkoutPage.proceedToCheckout()
+
 })
 Then("o site redireciona para a página de pagamento", () =>{
-   cy.screenshot()
+    checkoutPage.screenshot()
+  
 })
