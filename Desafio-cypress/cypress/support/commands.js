@@ -26,6 +26,7 @@
 
 Cypress.Commands.add('getToken', () => {
     cy.request({
+      failOnStatusCode: false,
       method: 'POST',
       url: 'https://www.advantageonlineshopping.com/accountservice/accountrest/api/v1/login',
       headers: {
@@ -36,6 +37,7 @@ Cypress.Commands.add('getToken', () => {
         loginPassword: 'Tinho1809',
         loginUser: 'ItaloCarvalho',
       },
+      
     }).then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body.statusMessage.success).to.be.true;

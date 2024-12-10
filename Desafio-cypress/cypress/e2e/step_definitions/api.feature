@@ -1,7 +1,7 @@
 Feature: Busca de produto e alteracao de imagem
     
 Scenario: Realizar a busca de um produto
-Given que estou logado
+Given que eu tenho uma url valida
 When faco a requisicao get de busca do produto TABLET
 Then servico retorna status 200
 And resultado da busca

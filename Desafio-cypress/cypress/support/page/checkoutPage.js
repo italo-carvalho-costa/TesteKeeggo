@@ -1,7 +1,8 @@
+import CheckoutPageLocators from '../locators/CheckoutPageLocators.js';
 
 class CheckoutPage {
     proceedToCheckout() {
-        cy.get('#checkOutPopUp').click(); 
+        cy.get(CheckoutPageLocators.checkoutPopupButton).click(); 
     }
 
     screenshot() {

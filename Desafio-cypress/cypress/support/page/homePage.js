@@ -1,3 +1,4 @@
+import HomePageLocators from "../locators/HomePageLocators.js";
 
 class HomePage {
     visit() {
@@ -10,15 +11,15 @@ class HomePage {
     }
 
     clickOnCategory() {
-        cy.get(':nth-child(4) > .img').click();
+        cy.get(HomePageLocators.categoryImage).click();
     }
 
     searchForProduct(product) {
-        cy.get('#autoComplete').type(`${product}{enter}`); 
+        cy.get(HomePageLocators.autoCompleteInput).type(`${product}{enter}`); 
     }
 
     selectProductFromSearch() {
-        cy.get('.autoCompleteCover > div > img').click(); 
+        cy.get(HomePageLocators.searchButton).click(); 
     }
 }
 

@@ -1,5 +1,3 @@
-
-
 const updateProductImage = (productId, token, imagePath) => {
     cy.fixture(imagePath, 'binary').then((image) => {
       const blob = Cypress.Blob.binaryStringToBlob(image, 'image/jpg');

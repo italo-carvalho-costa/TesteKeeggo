@@ -1,9 +1,9 @@
 import {Given, When, And, Then} from 'cypress-cucumber-preprocessor/steps'
 
 import homePage from '../../../support/page/homePage.js';
-import searchpage from '../../../support/searchpage/searchpage.js';
-import productpage from '../../../support/productpage/productpage.js';
-import checkoutPage from '../../../support/chackoutpage/checkoutPage.js';
+import searchpage from '../../../support/page/searchpage.js';
+import productpage from '../../../support/page/productpage.js';
+import checkoutPage from '../../../support/page/checkoutPage.js';
 
 
 

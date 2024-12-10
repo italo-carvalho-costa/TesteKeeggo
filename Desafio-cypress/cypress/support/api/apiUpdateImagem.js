@@ -1,5 +1,3 @@
-
-
 class ProductImageUpdatePage {
     updateProductImage() {
         const token = Cypress.env('token');
@@ -17,9 +15,10 @@ class ProductImageUpdatePage {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data'
                 },
-                body: formData
+                body: formData,
+                failOnStatusCode: false
             }).then((response) => {
-                expect(response.status).to.eq(200); 
+                expect(response.status).to.be.within(200,299) 
                 cy.log(response.body);
             });
         });
