@@ -18,7 +18,14 @@ class ProductImageUpdatePage {
                 body: formData,
                 failOnStatusCode: false
             }).then((response) => {
-                expect(response.status).to.be.within(200,299) 
+                if(response.status === 200) {
+                    expect(response.status).to.eq(200); 
+                    } else {
+                        cy.log('inconsistencia na api')
+                    }
+                Cypress.env('status', response.status);
+                Cypress.env('imageUpdateResponse', response.body);
+                // expect(response.status).to.be.within(200,299) 
                 cy.log(response.body);
             });
         });

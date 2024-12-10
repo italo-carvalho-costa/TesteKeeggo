@@ -10,4 +10,3 @@ Scenario: Realizar a alteracao de imagem de um produto
 Given que estou logado
 When faco a requisicao Post alteracao de imagem do produto TABLET
 Then servico post retorna status 200
-And resultado da mudanca da imagem

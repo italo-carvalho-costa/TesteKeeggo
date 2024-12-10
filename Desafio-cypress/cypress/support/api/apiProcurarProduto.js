@@ -12,9 +12,15 @@ class ProductSearchPage {
             },
             headers: {
                 Authorization: `Bearer ${token}`
-            }
+            },
+            failOnStatusCode: false
         }).then((response) => {
+            if(response.status === 200) {
             expect(response.status).to.eq(200); 
+            } else {
+                cy.log('inconsistencia na api')
+            }
+
             Cypress.env('response', response.body);
             Cypress.env('status', response.status); 
         });

@@ -2,6 +2,7 @@ import {Given, When, And, Then} from 'cypress-cucumber-preprocessor/steps'
 import apiProcurarProduto from '../../../support/api/apiProcurarProduto.js'
 import token from '../../../support/token/token'
 import apiUpdateImagem from '../../../support/api/apiUpdateImagem.js'
+import HomePageLocators from '../../../support/locators/HomePageLocators.js'
 
 Given("que eu tenho uma url valida", () =>{
     cy.log(HomePageLocators.urlProcuraProduto)
